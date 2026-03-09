@@ -1,0 +1,60 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "change var X",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "VarX",
+					"value": "10"
+				}
+			},
+			{
+				"name": "Var Z",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "change var X",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "VarZ",
+					"value": {
+						"value": "@{add(int(variables('VarX')),int(variables('VarY')))}",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"VarX": {
+				"type": "String",
+				"defaultValue": "5"
+			},
+			"VarY": {
+				"type": "String",
+				"defaultValue": "10"
+			},
+			"VarZ": {
+				"type": "String",
+				"defaultValue": "7"
+			}
+		},
+		"annotations": []
+	}
+}
