@@ -11,17 +11,44 @@
 					"variableName": "Marks",
 					"value": "90"
 				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Append variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Output",
+					"value": {
+						"value": "@variables('Marks')",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"variables": {
 			"Marks": {
 				"type": "Array",
 				"defaultValue": [
-					85,
-					36,
-					57,
-					49
+					89,
+					50,
+					78,
+					40
 				]
+			},
+			"Output": {
+				"type": "Array"
 			}
 		},
 		"annotations": []
