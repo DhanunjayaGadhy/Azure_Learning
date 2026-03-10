@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "Blob - Blob copy data",
 	"properties": {
 		"activities": [
 			{
