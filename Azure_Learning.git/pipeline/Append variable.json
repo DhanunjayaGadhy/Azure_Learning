@@ -1,0 +1,29 @@
+{
+	"name": "Append variable",
+	"properties": {
+		"activities": [
+			{
+				"name": "Append variable1",
+				"type": "AppendVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Marks",
+					"value": "90"
+				}
+			}
+		],
+		"variables": {
+			"Marks": {
+				"type": "Array",
+				"defaultValue": [
+					85,
+					36,
+					57,
+					49
+				]
+			}
+		},
+		"annotations": []
+	}
+}
