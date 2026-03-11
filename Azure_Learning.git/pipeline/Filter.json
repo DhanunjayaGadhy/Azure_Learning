@@ -22,7 +22,11 @@
 		"parameters": {
 			"listofstring": {
 				"type": "array",
-				"defaultValue": "(\"DJ\",\"DSJ\",\"Sravani\")"
+				"defaultValue": [
+					"DJ",
+					"DSJ",
+					"Sravani"
+				]
 			}
 		},
 		"annotations": []
