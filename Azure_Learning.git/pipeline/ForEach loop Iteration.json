@@ -101,7 +101,13 @@
 							"inputs": [
 								{
 									"referenceName": "ds_sourcecontainer",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"p_FileName": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
