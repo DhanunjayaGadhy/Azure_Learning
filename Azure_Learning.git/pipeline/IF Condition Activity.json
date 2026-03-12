@@ -1,0 +1,62 @@
+{
+	"name": "IF Condition Activity",
+	"properties": {
+		"activities": [
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@lessOrEquals(pipeline().parameters.Amount,10000)",
+						"type": "Expression"
+					},
+					"ifFalseActivities": [
+						{
+							"name": "Set variable2",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Rateofinterest",
+								"value": "18%"
+							}
+						}
+					],
+					"ifTrueActivities": [
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Rateofinterest",
+								"value": "12%"
+							}
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"Amount": {
+				"type": "int"
+			}
+		},
+		"variables": {
+			"Rateofinterest": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
