@@ -60,7 +60,7 @@
 				"     broadcast: 'auto')~> exists1",
 				"exists1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     partitionFileNames:['exist_empdata'],",
+				"     partitionFileNames:['exist_empdata.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     partitionBy('hash', 1)) ~> sink1"
