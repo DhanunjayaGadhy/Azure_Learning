@@ -83,7 +83,7 @@
 				"dept10, dept20, dept30 union(byName: true)~> union1",
 				"union1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     partitionFileNames:['Union_dept'],",
+				"     partitionFileNames:['Union_dept.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     partitionBy('hash', 1)) ~> Uniondept"
